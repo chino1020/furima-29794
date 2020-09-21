@@ -17,7 +17,7 @@
 
 - has_many :items
 - has_many :comments
-- has_one :purchase
+- has_many :sold_outs
 
 ## items テーブル
 
@@ -37,7 +37,7 @@
 
 - has_many :comments
 - belongs_to :user
-- has_one :purchase
+- has_one :sold_out
 
 ## purchases テーブル
 
@@ -50,12 +50,10 @@
 | building | string |  |
 | phone-number | string | null: false |
 | postal-code | string | null: false |
+| sold_out_id | references | null: false, foreign_key: true |
 
-
-### Association
-
-- belongs_to :user
-- belongs_to :item
+### Association 
+- belongs_to :sold_out
 
 ## comments テーブル
 
@@ -70,6 +68,12 @@
 - belongs_to :user
 - belongs_to :item
 
-## sold_outテーブル
+## sold_outsテーブル
 | user_id | references | null: false, foreign_key: true |
 | item_id | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+- has_one :purchase
