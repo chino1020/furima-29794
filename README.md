@@ -23,7 +23,8 @@
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-| name | string | null:false|
+| image | string | null: false |
+| name | string | null: false|
 | info | text | null: false |
 | category_id | integer | null: false |
 | sales_status_id | integer | null: false |
