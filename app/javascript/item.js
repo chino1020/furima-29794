@@ -9,4 +9,4 @@ function item (){
   });
 }
 
-window.addEventListener('load', item);
+setInterval(item, 1000);
