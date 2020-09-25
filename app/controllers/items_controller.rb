@@ -21,10 +21,6 @@ before_action :set_item, only: [:show, :destroy]
     end
   end
 
-  def show
-    
-  end
-
   def destroy
     
   end
