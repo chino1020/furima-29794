@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
+before_action :set_item, only: [:show, :destroy]
+
   def index
-    @items = Item.all.order("created_at DESC")
+    @items = Item.order('created_at DESC')
   end
 
   def edit
@@ -19,7 +21,12 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
+  def destroy
+    
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   private
