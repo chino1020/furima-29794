@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :items
   has_many :comments
-  has_many :sold_outs
+  has_many :orders
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
