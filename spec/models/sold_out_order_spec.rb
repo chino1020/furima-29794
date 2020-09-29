@@ -17,7 +17,7 @@ RSpec.describe SoldOutOrder, type: :model do
     it 'prefecture_idが空だと保存できないこと' do
       @sold_out_order.prefecture_id = nil
       @sold_out_order.valid?
-      expect(@sold_out_order.errors.full_messages).to include("Prefecture is not a number")
+      expect(@sold_out_order.errors.full_messages).to include('Prefecture is not a number')
     end
     it 'cityが空だと保存できないこと' do
       @sold_out_order.city = nil
@@ -40,14 +40,14 @@ RSpec.describe SoldOutOrder, type: :model do
       expect(@sold_out_order.errors.full_messages).to include("Token can't be blank")
     end
     it 'postal_codeにハイフンが含まれていないと保存できないこと' do
-      @sold_out_order.postal_code = "1234567"
+      @sold_out_order.postal_code = '1234567'
       @sold_out_order.valid?
-      expect(@sold_out_order.errors.full_messages).to include("Postal code is invalid. Include hyphen(-)")
+      expect(@sold_out_order.errors.full_messages).to include('Postal code is invalid. Include hyphen(-)')
     end
     it 'phone_numberは11桁より多いと保存できないこと' do
-      @sold_out_order.phone_number = "000000000000"
+      @sold_out_order.phone_number = '000000000000'
       @sold_out_order.valid?
-      expect(@sold_out_order.errors.full_messages).to include("Phone number is invalid")
+      expect(@sold_out_order.errors.full_messages).to include('Phone number is invalid')
     end
     it 'buildingは空でも保存できること' do
       @sold_out_order.building = nil
@@ -56,8 +56,7 @@ RSpec.describe SoldOutOrder, type: :model do
     it 'prefecture_idが1だと保存できないこと' do
       @sold_out_order.prefecture_id = 1
       @sold_out_order.valid?
-      expect(@sold_out_order.errors.full_messages).to include("Prefecture must be other than 1")
+      expect(@sold_out_order.errors.full_messages).to include('Prefecture must be other than 1')
     end
-   
   end
 end
