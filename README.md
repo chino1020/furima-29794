@@ -40,7 +40,7 @@
 - belongs_to :user
 - has_one :sold_out
 
-## orders テーブル
+## ordersテーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
