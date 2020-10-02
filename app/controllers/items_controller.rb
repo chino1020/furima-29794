@@ -7,6 +7,10 @@ class ItemsController < ApplicationController
     @items = Item.order('created_at DESC')
   end
 
+  def search
+    @items = Item.search(params[:keyword]).order('created_at DESC')
+  end
+
   def update
     if @item.update(item_params)
       redirect_to item_path(@item.id)
@@ -49,4 +53,5 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:image, :name, :info, :category_id, :sales_status_id, :shipping_fee_id, :prefecture_id, :scheduled_delivery_id, :price).merge(user_id: current_user.id)
   end
+
 end
